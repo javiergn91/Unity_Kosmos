@@ -533,7 +533,7 @@ namespace Kosmos.UI.Transition
             StopRotationAnimation();
             StopAlphaAnimation();
             StopColorAnimation();
-            
+
             StartMovementOpenAnimation();
             StartScaleOpenAnimation();
             StartRotationOpenAnimation();

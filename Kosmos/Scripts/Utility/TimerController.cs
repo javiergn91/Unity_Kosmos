@@ -6,11 +6,6 @@ namespace Kosmos.Utility
 {
     public class TimerController : MonoBehaviour
     {
-        public enum Change3DTransformMode
-        {
-            Position
-        }
-
         public delegate void SimpleFunc();
         public delegate void OnUpdateFunc(float time);
 
@@ -75,25 +70,6 @@ namespace Kosmos.Utility
             }
 
             timers.Add(newTimer);
-        }
-
-        public void Change3DTransform(Transform tr, float time, Change3DTransformMode mode, Vector3 fPos)
-        {
-            Vector3 sPos = tr.position;
-
-            float animTime = time;
-
-            AddTimer(new TimerController.CustomTimer(animTime,
-            delegate
-            {
-                transform.position = fPos;
-            },
-            delegate (float _time)
-            {
-                float t = Easings.Interpolate(_time / animTime, Easings.Functions.CubicEaseOut);
-
-                tr.position = Vector3.Lerp(sPos, fPos, t);
-            }));
         }
 
         void Update()
