@@ -23,10 +23,12 @@ namespace Kosmos.Networking
         //Delegate definitions
         public delegate void F(bool success, string response);
 
+        /*
         public string GetIPAddress()
         {
             return Network.player.ipAddress;
         }
+        */
 
         public void Request(string url, F onEnd)
         {
